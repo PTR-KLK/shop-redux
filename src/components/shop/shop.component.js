@@ -16,8 +16,8 @@ function Shop(props) {
   },[actionFetchList]);
 
   const handleClick = (event) => {
-    const price = productList.find(e=>e.id === Number(event.target.id)).price;
-    actionAddItem(price);
+    const item = productList.find(e=>e.id === Number(event.target.id));
+    actionAddItem(item);
   }
 
   return (
@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actionFetchList: () => dispatch(ACTION_FETCH_INIT_LIST()),
-  actionAddItem: (itemPrice) => dispatch(ACTION_ADD_ITEM(itemPrice)),
+  actionAddItem: (item) => dispatch(ACTION_ADD_ITEM(item)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);

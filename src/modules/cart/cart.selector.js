@@ -1,2 +1,2 @@
-export const selectCartTotal = (state) =>
-  state.cart.total;
+export const selectCart = (state) =>
+  state.cart.cart;

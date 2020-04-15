@@ -1,7 +1,6 @@
 import { CART_ACTION_TYPES } from './cart.action';
 
 const INITIAL_STATE = {
-    total: 0,
     cart: [],
   };
 
@@ -10,7 +9,7 @@ const INITIAL_STATE = {
       case CART_ACTION_TYPES.ADD_ITEM:
         return state = {
           ...state,
-          total: state.total + action.value,
+          cart: [...state.cart, action.item]
         };
       default:
         return state;
