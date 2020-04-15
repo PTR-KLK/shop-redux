@@ -1,17 +1,22 @@
-import { CART_ACTION_TYPES } from './cart.action';
+import { CART_ACTION_TYPES } from "./cart.action";
 
 const INITIAL_STATE = {
-    cart: [],
-  };
+  cart: [],
+};
 
-  export default (state = INITIAL_STATE, action) => {
-    switch(action.type) {
-      case CART_ACTION_TYPES.ADD_ITEM:
-        return state = {
-          ...state,
-          cart: [...state.cart, action.item]
-        };
-      default:
-        return state;
-    }
+export default (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case CART_ACTION_TYPES.ADD_ITEM:
+      return (state = {
+        ...state,
+        cart: [...state.cart, action.item],
+      });
+    case CART_ACTION_TYPES.REMOVE_ITEM:
+      return (state = {
+        ...state,
+        cart: state.cart.filter(e => e.id!== action.id),
+      });
+    default:
+      return state;
   }
+};

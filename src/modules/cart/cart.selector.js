@@ -8,3 +8,6 @@ export const selectCartTotal = (state) =>
 
 export const selectCartLength = (state) =>
   state.cart.cart.length;
+
+export const selectCartIds = (state) =>
+  state.cart.cart.map(e => e.id);

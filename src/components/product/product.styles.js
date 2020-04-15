@@ -10,8 +10,14 @@ export const ProductContainer = styled.div`
 
 export const ProductDescription = styled.div`
     width: 70%;
+    margin: 1rem 1rem 1rem 0;
 `;
 
 export const ProductImage = styled.img`
     width: 30%;
+    margin: 1rem;
+`;
+
+export const ProductTitle = styled.h3`
+    margin: 0 1rem 1rem 0;
 `;

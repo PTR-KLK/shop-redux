@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductListContainer } from './productList.styles';
 import Product from '../product/product.component';
 
-function ProductList({list, handleClick}) {
+function ProductList({list}) {
 
   return (
     <ProductListContainer>
@@ -16,7 +16,6 @@ function ProductList({list, handleClick}) {
             price={e.price}
             image={e.image}
             id={e.id}
-            handleClick={handleClick}
           />
         );
       })}
