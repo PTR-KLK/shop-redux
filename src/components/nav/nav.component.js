@@ -1,12 +1,18 @@
-import React from 'react';
-import { NavContainer } from './nav.styles';
-import Cart from '../cart/cart.component'
+import React from "react";
+import { NavContainer, MenuContainer, StyledLink } from "./nav.styles";
+import CartButton from "../cartButton/cartButton.component";
 
-function Nav(props) {
+function Nav() {
   return (
     <NavContainer>
-        {props.children}
-        <Cart />
+      <MenuContainer>
+        <li>
+          <StyledLink to="/">
+            My Shop App
+          </StyledLink>
+        </li>
+      </MenuContainer>
+      <CartButton />
     </NavContainer>
   );
 }

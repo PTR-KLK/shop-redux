@@ -1,14 +1,14 @@
-import { PRODUCTLIST_ACTION_TYPES } from './productList.action';
+import { PRODUCTS_ACTION_TYPES } from './products.action';
 
 const INITIAL_STATE = {
-  productList: [],
+  products: [],
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
-    case PRODUCTLIST_ACTION_TYPES.FETCH_LIST:
+    case PRODUCTS_ACTION_TYPES.FETCH_PRODUCTS_SUCCESS:
       return state = {
-        productList: action.value,
+        products: action.value,
       };
     default:
       return state;
