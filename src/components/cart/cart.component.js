@@ -7,6 +7,7 @@ import { CartContainer } from './cart.styles';
 function Cart(props) {
   return (
     <CartContainer>
+        ({props.cart.length})
         Koszyk: {props.cart.reduce((total,element)=>{
           return total + element.price
         },0)}

@@ -2,10 +2,10 @@ import React from 'react';
 import { NavContainer } from './nav.styles';
 import Cart from '../cart/cart.component'
 
-function Nav() {
+function Nav(props) {
   return (
     <NavContainer>
-        Tu będzie jakaś nawigacja
+        {props.children}
         <Cart />
     </NavContainer>
   );
