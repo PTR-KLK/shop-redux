@@ -14,7 +14,7 @@ function Product(props) {
         <p>Category: {props.category}</p>
         <p>{props.description}</p>
         <p>Price: {props.price}</p>
-        <button>Buy</button>
+        <button id={props.id} onClick={props.handleClick}>Buy</button>
       </ProductDescription>
     </ProductContainer>
   );
