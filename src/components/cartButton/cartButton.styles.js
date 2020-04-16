@@ -5,4 +5,8 @@ export const CartButtonContainer = styled(Link)`
     color: white;
     text-decoration: none;
     margin-right: 2rem;
+
+    &:hover {
+        color: teal;
+      }
 `;

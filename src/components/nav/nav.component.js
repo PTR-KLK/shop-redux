@@ -11,6 +11,11 @@ function Nav() {
             My Shop App
           </StyledLink>
         </li>
+        <li>
+          <StyledLink to="/orders">
+            Orders
+          </StyledLink>
+        </li>
       </MenuContainer>
       <CartButton />
     </NavContainer>

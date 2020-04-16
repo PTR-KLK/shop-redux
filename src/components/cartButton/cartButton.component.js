@@ -8,7 +8,7 @@ function CartButton(props) {
   return (
     <CartButtonContainer to="/cart">
         ({props.cartLength})
-        Koszyk: {props.cartTotal}
+        Cart: {props.cartTotal}
     </CartButtonContainer>
   );
 }

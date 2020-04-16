@@ -24,8 +24,8 @@ function Product(props) {
 
   return (
     <ProductContainer>
-      <ProductImage src={props.image} alt={props.title} />
-      <ProductDescription>
+      <ProductImage src={props.image} alt={props.title} small={props.cartImage}/>
+      <ProductDescription small={props.cartDetails}>
         <ProductTitle>{props.title}</ProductTitle>
         <p>Category: {props.category}</p>
         <p>{props.description}</p>

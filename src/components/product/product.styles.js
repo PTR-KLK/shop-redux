@@ -9,12 +9,12 @@ export const ProductContainer = styled.div`
 `;
 
 export const ProductDescription = styled.div`
-    width: 70%;
+    width: ${props => props.small ? "85%" : "70%"};
     margin: 1rem 1rem 1rem 0;
 `;
 
 export const ProductImage = styled.img`
-    width: 30%;
+    width: ${props => props.small ? "15%" : "30%"};
     margin: 1rem;
 `;
 

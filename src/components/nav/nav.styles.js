@@ -22,4 +22,7 @@ export const MenuContainer = styled.ul`
 export const StyledLink = styled(Link)`
     color: white;
     text-decoration: none;
+    &:hover {
+        color: teal;
+      }
 `;
