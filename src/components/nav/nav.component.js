@@ -7,12 +7,12 @@ function Nav() {
     <NavContainer>
       <MenuContainer>
         <li>
-          <StyledLink to="/">
+          <StyledLink to="/simple-shop/">
             My Shop App
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/orders">
+          <StyledLink to="/simple-shop/orders">
             Orders
           </StyledLink>
         </li>

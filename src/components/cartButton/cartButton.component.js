@@ -6,7 +6,7 @@ import { CartButtonContainer } from './cartButton.styles';
 
 function CartButton(props) {
   return (
-    <CartButtonContainer to="/cart">
+    <CartButtonContainer to="/simple-shop/cart">
         ({props.cartLength})
         Cart: {props.cartTotal}
     </CartButtonContainer>
