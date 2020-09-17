@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 export const ProductContainer = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 15px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
 `;
 
 export const ProductDescription = styled.div`
@@ -14,8 +19,12 @@ export const ProductDescription = styled.div`
 `;
 
 export const ProductImage = styled.img`
-    width: ${props => props.small ? "15%" : "30%"};
+    width: 40%;
     margin: 1rem;
+
+    @media (min-width: 768px) {
+        width: ${props => props.small ? "15%" : "30%"};
+    }
 `;
 
 export const ProductTitle = styled.h3`
