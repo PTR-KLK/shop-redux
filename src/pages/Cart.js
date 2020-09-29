@@ -6,24 +6,19 @@ import {
   selectCartTotal,
   selectCartLength,
 } from "../modules/cart/cart.selector";
-import ProductListMini from "../components/productListMini/productListMini.component";
+import ProductList from "../components/productList/productList.component";
 
 function YourCart({ cart, cartTotal, cartLength }) {
   return (
     <>
-      <ProductListMini list={cart}>
+      <ProductList list={cart} />
       <h3>
-          {cartLength === 0
-            ? "Cart is empty"
-            : `You have ${cartLength} ${
-                cartLength === 1
-                  ? "product"
-                  : "products"
-              }
+        {cartLength === 0
+          ? "Cart is empty"
+          : `You have ${cartLength} ${cartLength === 1 ? "product" : "products"}
               for ${cartTotal} zł`}
-        </h3>
-      </ProductListMini>
-      <Link to='/cart/order' > Order </Link>
+      </h3>
+      <Link to="/cart/order"> Order </Link>
     </>
   );
 }
