@@ -5,6 +5,8 @@ import {
   ProductDescription,
   ProductImage,
   ProductTitle,
+  Price,
+  Button,
 } from "./product.styles";
 import { ACTION_ADD_ITEM, ACTION_REMOVE_ITEM } from "../../modules/cart/cart.action";
 import { selectProducts } from "../../modules/products/products.selector";
@@ -29,16 +31,16 @@ function Product(props) {
         <ProductTitle>{props.title}</ProductTitle>
         <p>Category: {props.category}</p>
         <p>{props.description}</p>
-        <p>Price: {props.price}</p>
 
+        <Price>Price: {props.price}</Price>
         {props.cartItems.includes(props.id) ? (
-          <button id={props.id} onClick={handleRemove}>
-            Remove
-          </button>
+          <Button danger id={props.id} onClick={handleRemove}>
+            Remove from Cart
+          </Button>
         ) : (
-          <button id={props.id} onClick={handleAdd}>
-            Buy
-          </button>
+          <Button id={props.id} onClick={handleAdd}>
+            Add to Cart
+          </Button>
         )}
       </ProductDescription>
     </ProductContainer>

@@ -8,7 +8,7 @@ function Nav() {
       <MenuContainer>
         <li>
           <StyledLink to="/simple-shop/">
-            My Shop App
+            Home
           </StyledLink>
         </li>
         <li>

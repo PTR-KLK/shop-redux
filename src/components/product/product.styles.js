@@ -7,8 +7,8 @@ export const ProductContainer = styled.div`
     color: ${colors.dark};
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    padding: 1rem;
 
     @media (min-width: ${breakpoints.tablet}) {
         flex-direction: row;
@@ -16,19 +16,51 @@ export const ProductContainer = styled.div`
 `;
 
 export const ProductDescription = styled.div`
-    width: 70%;
-    margin: 1rem 1rem 1rem 0;
+    width: 100%;
 
     p {
         overflow-wrap: break-word;
+        margin: 0.5rem 0;
+    }
+
+    @media (min-width: ${breakpoints.tablet}) {
+        width: 70%;
     }
 `;
 
 export const ProductImage = styled.img`
-    width: 40%;
-    margin: 1rem;
+    height: auto;
+    width: 50%;
+    margin: 0;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        width: 33%;
+    }
+
+    @media (min-width: ${breakpoints.tablet}) {
+        width: 25%;
+        margin 0 1rem 0 0;
+    }
 `;
 
 export const ProductTitle = styled.h3`
-    margin: 0 1rem 1rem 0;
+    margin 0.5rem 0 0;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        margin 0;
+    }
+`;
+
+export const Price = styled.p`
+    font-weight: bold;
+`;
+
+export const Button = styled.button`
+    width: 100%;
+    background: ${props => props.danger ? colors.danger : colors.secondary};
+    color: ${colors.light};
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 `;
