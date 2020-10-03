@@ -1,11 +1,16 @@
-import React from 'react';
-import { ProductListContainer } from './productList.styles';
-import Product from '../product/product.component';
+import React from "react";
+import { ProductListContainer, Header } from "./productList.styles";
+import Product from "../product/product.component";
 
-function ProductList({list}) {
-
+function ProductList({ list, no, name, lastName }) {
   return (
     <ProductListContainer>
+      {name ? (
+        <Header>
+          <h3>Order no. {no + 1}</h3>
+          <p>{name + " " + lastName}</p>
+        </Header>
+      ) : null}
       {list.map((e) => {
         return (
           <Product

@@ -4,7 +4,7 @@ import {
   selectCartTotal,
   selectCartLength,
 } from "../../modules/cart/cart.selector";
-import { Container, Title, Button } from "./cartSection.styles";
+import { Container, Title, OrderLink } from "./cartSection.styles";
 
 function CartSection({ cartTotal, cartLength }) {
   return (
@@ -17,7 +17,7 @@ function CartSection({ cartTotal, cartLength }) {
         <br />
         {cartLength === 0 ? null : `${cartTotal} zł`}
       </Title>
-      <Button>Order Items</Button>
+      <OrderLink disabled={cartLength === 0} to="/simple-shop/cart/order">Order Items</OrderLink>
     </Container>
   );
 }

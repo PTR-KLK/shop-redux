@@ -8,11 +8,13 @@ function YourOrders({ orders }) {
     <>
       {orders.map((e, idx) => {
         return (
-          <>
-            <ProductList key={idx} list={e.items} />
-            <h3>Order no.{idx}</h3>
-            <h3>{e.name + " " + e.lastName}</h3>
-          </>
+          <ProductList
+            key={idx}
+            list={e.items}
+            no={idx}
+            name={e.name}
+            lastName={e.lastName}
+          />
         );
       })}
     </>
