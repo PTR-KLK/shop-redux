@@ -5,6 +5,9 @@ export const ProductListContainer = styled.div`
   margin: 3rem auto 0;
   max-width: 600px;
   padding: 1rem 1rem 0;
+  h1 {
+    text-align: center;
+  }
 `;
 
 export const Header = styled.header`
