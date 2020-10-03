@@ -5,12 +5,13 @@ import Product from "../product/product.component";
 function ProductList({ list, no, name, lastName }) {
   return (
     <ProductListContainer>
-      {name ? (
+      {!list.length && <h1>Loading...</h1>}
+      {name && (
         <Header>
           <h3>Order no. {no + 1}</h3>
           <p>{name + " " + lastName}</p>
         </Header>
-      ) : null}
+      )}
       {list.map((e) => {
         return (
           <Product
