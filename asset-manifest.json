@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/simple-shop/static/js/main.e2040d75.chunk.js",
-    "main.js.map": "/simple-shop/static/js/main.e2040d75.chunk.js.map",
+    "main.js": "/simple-shop/static/js/main.afdf4a7a.chunk.js",
+    "main.js.map": "/simple-shop/static/js/main.afdf4a7a.chunk.js.map",
     "runtime-main.js": "/simple-shop/static/js/runtime-main.c704a670.js",
     "runtime-main.js.map": "/simple-shop/static/js/runtime-main.c704a670.js.map",
-    "static/js/2.58bb9ffe.chunk.js": "/simple-shop/static/js/2.58bb9ffe.chunk.js",
-    "static/js/2.58bb9ffe.chunk.js.map": "/simple-shop/static/js/2.58bb9ffe.chunk.js.map",
+    "static/js/2.c3e6dcc5.chunk.js": "/simple-shop/static/js/2.c3e6dcc5.chunk.js",
+    "static/js/2.c3e6dcc5.chunk.js.map": "/simple-shop/static/js/2.c3e6dcc5.chunk.js.map",
     "index.html": "/simple-shop/index.html",
-    "precache-manifest.185891c8619b42d304e8c9087080678d.js": "/simple-shop/precache-manifest.185891c8619b42d304e8c9087080678d.js",
+    "precache-manifest.5b709ab60744eac21003333b5118dcaf.js": "/simple-shop/precache-manifest.5b709ab60744eac21003333b5118dcaf.js",
     "service-worker.js": "/simple-shop/service-worker.js",
-    "static/js/2.58bb9ffe.chunk.js.LICENSE.txt": "/simple-shop/static/js/2.58bb9ffe.chunk.js.LICENSE.txt"
+    "static/js/2.c3e6dcc5.chunk.js.LICENSE.txt": "/simple-shop/static/js/2.c3e6dcc5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c704a670.js",
-    "static/js/2.58bb9ffe.chunk.js",
-    "static/js/main.e2040d75.chunk.js"
+    "static/js/2.c3e6dcc5.chunk.js",
+    "static/js/main.afdf4a7a.chunk.js"
   ]
 }
