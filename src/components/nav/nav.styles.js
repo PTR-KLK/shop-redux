@@ -14,17 +14,10 @@ export const NavContainer = styled.div`
     justify-content: space-between;
 `;
 
-export const MenuContainer = styled.ul`
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-`;
-
 export const StyledLink = styled(Link)`
     color: ${colors.light};
     text-decoration: none;
-    margin: 0 0.5rem 0 0;
+    margin: 0 2rem;
     &:hover {
         color: ${colors.secondary};
       }

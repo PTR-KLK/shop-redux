@@ -1,26 +1,35 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { ACTION_FETCH_INIT_PRODUCTS } from "../modules/products/products.action";
-import { selectProducts } from "../modules/products/products.selector";
+import { ACTION_FETCH_INIT_CATEGORIES } from "../modules/categories/categories.action";
+import Sidebar from "../components/sidebar/sidebar.component";
+import Banner from "../components/banner/banner.component";
+import { createGlobalStyle } from "styled-components";
 
-import ProductList from "../components/productList/productList.component";
+const GlobalStyle = createGlobalStyle`
+  main {
+    display: flex;
+    justify-content: center;
+  }
+`;
 
 function Shop(props) {
-  const { actionFetchProducts, products } = props;
+  const { actionFetchCategories } = props;
 
   useEffect(() => {
-    actionFetchProducts();
-  }, [actionFetchProducts]);
+    actionFetchCategories();
+  }, [actionFetchCategories]);
 
-  return <ProductList list={products} />;
+  return (
+    <>
+      <GlobalStyle />
+      <Sidebar />
+      <Banner />
+    </>
+  );
 }
 
-const mapStateToProps = (state) => ({
-  products: selectProducts(state),
-});
-
 const mapDispatchToProps = (dispatch) => ({
-  actionFetchProducts: () => dispatch(ACTION_FETCH_INIT_PRODUCTS()),
+  actionFetchCategories: () => dispatch(ACTION_FETCH_INIT_CATEGORIES()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);
