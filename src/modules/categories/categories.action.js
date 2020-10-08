@@ -1,7 +1,6 @@
 export const CATEGORIES_ACTION_TYPES = {
   FETCH_INIT_CATEGORIES: "FETCH_INIT_CATEGORIES",
   FETCH_CATEGORIES_SUCCESS: "FETCH_CATEGORIES_SUCCESS",
-  FETCH_CATEGORIES_LOADING: "FETCH_CATEGORIES_LOADING",
   FETCH_CATEGORIES_ERROR: "FETCH_CATEGORIES_ERROR",
 };
 
@@ -18,7 +17,11 @@ export const ACTION_FETCH_INIT_CATEGORIES = () => {
             }))
           )
         )
-      );
+      )
+      .catch((error) => {
+        console.error("Error:", error);
+        dispatch(ACTION_FETCH_CATEGORIES_ERROR());
+      });
   };
 };
 
@@ -26,5 +29,14 @@ export const ACTION_FETCH_CATEGORIES_SUCCESS = (categories) => {
   return {
     type: CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_SUCCESS,
     value: categories,
+    loading: false,
+  };
+};
+
+export const ACTION_FETCH_CATEGORIES_ERROR = () => {
+  return {
+    type: CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_ERROR,
+    error: true,
+    loading: false,
   };
 };

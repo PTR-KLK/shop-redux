@@ -5,6 +5,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   max-width: calc(600px - 2rem);
+  width: 100%;
   margin: 1rem;
   padding: 1rem;
   color: ${colors.dark};

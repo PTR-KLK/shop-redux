@@ -23,7 +23,9 @@ function Shop(props) {
     <>
       <GlobalStyle />
       <Sidebar />
-      <Banner />
+      <Banner>
+        <h2>Welcome to my Shop!</h2>
+      </Banner>
     </>
   );
 }

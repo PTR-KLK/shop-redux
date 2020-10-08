@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "./banner.styles";
 
-function Banner() {
+function Banner( {children} ) {
   return (
     <Container>
-      <h2>Welcome to my Shop!</h2>
+      {children}
     </Container>
   );
 }
