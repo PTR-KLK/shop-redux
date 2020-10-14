@@ -5,11 +5,13 @@ import ProductList from "../components/productList/productList.component";
 import OrderSection from "../components/orderSection/orderSection.component";
 
 function Order({ cart, cartLength }) {
-  return (
+  return cartLength !== 0 ? (
     <section>
-      {cartLength !== 0 ? <ProductList list={cart} /> : null}
+      <ProductList list={cart} />
       <OrderSection />
     </section>
+  ) : (
+    <OrderSection />
   );
 }
 

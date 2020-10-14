@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Container = styled.aside`
   display: ${(props) => (props.visible ? "block" : "none")};
   left: -1rem;
-  top: 2rem;
+  top: 1.625rem;
   position: fixed;
   height: calc(100vh - 3rem);
   background: ${colors.secondary};
@@ -37,4 +37,14 @@ export const Hyperlink = styled(Link)`
   text-decoration: none;
   color: inherit;
   white-space: nowrap;
+
+  &:hover {
+    color: ${colors.primary};
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    &:hover {
+      color: ${colors.secondary};
+    }
+  }
 `;

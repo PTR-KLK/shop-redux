@@ -7,6 +7,7 @@ export const ProductContainer = styled.section`
   margin: 1rem;
   display: flex;
   flex-direction: column;
+  word-break: break-word;
 
   @media (min-width: ${breakpoints.tablet}) {
     flex-direction: row;
@@ -18,6 +19,7 @@ export const ProductDescription = styled.div`
 
   @media (min-width: ${breakpoints.tablet}) {
     width: 70%;
+    height: 100%;
   }
 `;
 

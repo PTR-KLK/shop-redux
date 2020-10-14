@@ -14,7 +14,7 @@ export const Container = styled.nav`
 `;
 
 export const Menu = styled.button`
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin: 0 0.75rem;
     padding: 0;
     border: none;
@@ -29,14 +29,11 @@ export const Menu = styled.button`
 export const Hyperlink = styled(Link)`
     color: inherit;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin: 0 0.75rem;
 
     &:first-of-type {
-        position: absolute;
-        margin: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
+        display: none;
     }
 
     &:hover {
@@ -45,9 +42,7 @@ export const Hyperlink = styled(Link)`
 
     @media (min-width: ${breakpoints.tablet}) {
         &:first-of-type {
-            position: static;
-            transform: none;
-            margin: 0 0.75rem;
+            display: block;
         }
     }
 `;

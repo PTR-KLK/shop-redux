@@ -5,20 +5,25 @@ import {
   selectCartLength,
 } from "../../modules/cart/cart.selector";
 import { Container, Title, OrderLink } from "./cartSection.styles";
+import Banner from "../banner/banner.component";
 
 function CartSection({ cartTotal, cartLength }) {
-  return (
+  return cartLength !== 0 ? (
     <Container>
       <Title>
-        {cartLength === 0
-          ? "Cart is empty"
-          : `You have ${cartLength} ${cartLength === 1 ? "product" : "products"}
-              for:`}
+        You have {cartLength} {cartLength === 1 ? "product" : "products"}
+        for:
         <br />
-        {cartLength === 0 ? null : `${cartTotal} zł`}
+        {cartTotal} zł
       </Title>
-      <OrderLink disabled={cartLength === 0} to="/simple-shop/cart/order">Order Items</OrderLink>
+      <OrderLink disabled={cartLength === 0} to="/simple-shop/cart/order">
+        Order Items
+      </OrderLink>
     </Container>
+  ) : (
+    <Banner>
+      <p>Cart is empty</p>
+    </Banner>
   );
 }
 
