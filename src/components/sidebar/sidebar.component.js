@@ -5,18 +5,19 @@ import {
   selectLoading,
   selectError,
 } from "../../modules/categories/categories.selector";
-import { Container, List, Title, StyledLink } from "./sidebar.style";
+import { selectSidebarVisible } from "../../modules/sidebar/sidebar.selector";
+import { Container, List, Title, Hyperlink } from "./sidebar.style";
 
-function Sidebar({ categories, loading, error }) {
+function Sidebar({ categories, loading, error, sidebarVisible }) {
   return (
-    <Container>
+    <Container visible={sidebarVisible}>
       <List>
         <Title>Menu</Title>
         <li>
-          <StyledLink to="/simple-shop/">Home</StyledLink>
+          <Hyperlink to="/simple-shop/">Home</Hyperlink>
         </li>
         <li>
-          <StyledLink to="/simple-shop/orders">Orders</StyledLink>
+          <Hyperlink to="/simple-shop/orders">Orders</Hyperlink>
         </li>
       </List>
       <List>
@@ -29,7 +30,7 @@ function Sidebar({ categories, loading, error }) {
           categories.map((e) => {
             return (
               <li key={e.key}>
-                <StyledLink to={`/simple-shop/${e.key}`}>{e.name}</StyledLink>
+                <Hyperlink to={`/simple-shop/${e.key}`}>{e.name}</Hyperlink>
               </li>
             );
           })
@@ -43,6 +44,7 @@ const mapStateToProps = (state) => ({
   categories: selectCategories(state),
   loading: selectLoading(state),
   error: selectError(state),
+  sidebarVisible: selectSidebarVisible(state),
 });
 
 export default connect(mapStateToProps, null)(Sidebar);

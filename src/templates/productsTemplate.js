@@ -5,14 +5,13 @@ import { ACTION_FETCH_INIT_CATEGORIES } from "../modules/categories/categories.a
 import { selectProducts } from "../modules/products/products.selector";
 import ProductList from "../components/productList/productList.component";
 import Sidebar from "../components/sidebar/sidebar.component";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   main {
     display: flex;
-    justify-content: center;
   }
-`;
+`
 
 function Products(props) {
   const { actionFetchProducts, actionFetchCategories, products } = props;

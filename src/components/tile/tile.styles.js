@@ -5,7 +5,6 @@ export const Container = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     background: ${colors.light};
     padding: 1rem;
     margin: 1rem;

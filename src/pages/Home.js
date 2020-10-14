@@ -3,14 +3,6 @@ import { connect } from "react-redux";
 import { ACTION_FETCH_INIT_CATEGORIES } from "../modules/categories/categories.action";
 import Sidebar from "../components/sidebar/sidebar.component";
 import Banner from "../components/banner/banner.component";
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  main {
-    display: flex;
-    justify-content: center;
-  }
-`;
 
 function Shop(props) {
   const { actionFetchCategories } = props;
@@ -21,10 +13,9 @@ function Shop(props) {
 
   return (
     <>
-      <GlobalStyle />
       <Sidebar />
       <Banner>
-        <h2>Welcome to my Shop!</h2>
+        <p>Welcome to my Shop!</p>
       </Banner>
     </>
   );

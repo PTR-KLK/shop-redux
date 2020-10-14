@@ -1,40 +1,40 @@
 import styled from "styled-components";
-import { colors } from "../../utils/theme";
+import { colors, breakpoints } from "../../utils/theme";
 import { Link } from "react-router-dom";
 
 export const Container = styled.aside`
-  display: flex;
-  flex-direction: column;
+  display: ${(props) => (props.visible ? "block" : "none")};
+  left: -1rem;
+  top: 2rem;
+  position: fixed;
+  height: calc(100vh - 3rem);
+  background: ${colors.secondary};
+  color: ${colors.light};
+  padding: 1rem 1rem 0.5rem;
+  margin: 1rem 0 1rem 1rem;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    background: ${colors.light};
+    color: ${colors.dark};
+    display: block;
+    position: static;
+    height: auto;
+  }
 `;
 
 export const List = styled.ul`
-  min-width: 125px;
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem 1.5rem;
-  margin: 4rem 0 0 1rem;
   list-style: none;
-  background: ${colors.light};
-  color: ${colors.dark};
-
-  &:nth-of-type(2) {
-    margin: 1rem 0 0 1rem;
-  }
-
-  & > * {
-    margin: 0.25rem 0;
-  }
+  padding: 0;
+  margin: 0 0 0.5rem;
 `;
 
-export const Title = styled.h3`
-  font-size: 1.25rem;
+export const Title = styled.p`
+  font-weight: bold;
+  margin: 0 0 0.5rem;
 `;
 
-export const StyledLink = styled(Link)`
-    color: ${colors.dark};
-    text-decoration: none;
-
-    &:hover {
-        color: ${colors.secondary};
-      }
+export const Hyperlink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
 `;

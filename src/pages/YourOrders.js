@@ -2,33 +2,26 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectOrders } from "../modules/orders/orders.selector";
 import ProductList from "../components/productList/productList.component";
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-`;
+import Banner from "../components/banner/banner.component";
+import Tile from "../components/tile/tile.component";
 
 function YourOrders({ orders }) {
-  return (
-    <>
-      <GlobalStyle />
-      {orders.map((e, idx) => {
-        return (
-          <ProductList
-            key={idx}
-            list={e.items}
-            no={idx}
-            name={e.name}
-            lastName={e.lastName}
-          />
-        );
-      })}
-    </>
+  return orders.length !== 0 ? (
+    <section>
+      {orders.map((e, idx) => (
+        <>
+          <Tile>
+            <p>Order no. {idx + 1}</p>
+            <p>{e.name + " " + e.lastName}</p>
+          </Tile>
+          <ProductList key={idx} list={e.items} />
+        </>
+      ))}
+    </section>
+  ) : (
+    <Banner>
+      <p>No orders so far...</p>
+    </Banner>
   );
 }
 

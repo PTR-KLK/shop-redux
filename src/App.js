@@ -6,11 +6,20 @@ import Cart from "./pages/Cart";
 import Order from "./pages/Order";
 import ProductsTemplate from "./templates/productsTemplate";
 import YourOrders from "./pages/YourOrders";
+import { createGlobalStyle } from 'styled-components'
 
+const GlobalStyle = createGlobalStyle`
+  main {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+`
 
 function App() {
   return (
     <main>
+      <GlobalStyle />
       <Router>
         <Nav />
         <Switch>

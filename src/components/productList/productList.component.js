@@ -1,46 +1,41 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ProductListContainer, Header } from "./productList.styles";
 import Product from "../product/product.component";
+import Banner from "../banner/banner.component";
 import {
   selectLoading,
   selectError,
 } from "../../modules/products/products.selector";
-import Banner from "../banner/banner.component";
 
-function ProductList({ list, no, name, lastName, loading, error }) {
+function ProductList({ list, loading, error }) {
   return (
-    <ProductListContainer>
-      {name ? (
-        <Header>
-          <h3>Order no. {no + 1}</h3>
-          <p>{name + " " + lastName}</p>
-        </Header>
-      ) : null}
+    <>
       {loading ? (
         <Banner>
-          <h2>Loading items...</h2>
+          <p>Loading items...</p>
         </Banner>
       ) : error ? (
         <Banner>
-          <h2>Something gone wrong</h2>
+          <p>Something gone wrong...</p>
         </Banner>
       ) : (
-        list.map((e) => {
-          return (
-            <Product
-              key={e.id}
-              title={e.title}
-              category={e.category}
-              description={e.description}
-              price={e.price}
-              image={e.image}
-              id={e.id}
-            />
-          );
-        })
+        <section>
+          {list.map((e) => {
+            return (
+              <Product
+                key={e.id}
+                title={e.title}
+                category={e.category}
+                description={e.description}
+                price={e.price}
+                image={e.image}
+                id={e.id}
+              />
+            );
+          })}
+        </section>
       )}
-    </ProductListContainer>
+    </>
   );
 }
 

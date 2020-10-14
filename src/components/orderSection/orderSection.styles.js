@@ -1,38 +1,25 @@
 import styled from "styled-components";
-import { colors, breakpoints } from "../../utils/theme";
+import { colors } from "../../utils/theme";
 
 export const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  max-width: calc(600px - 2rem);
-  width: 100%;
-  margin: 1rem;
-  padding: 1rem;
-  color: ${colors.dark};
-  background: ${colors.light};
+    background: ${colors.light};
+    padding: 1rem;
+    margin: 1rem;
+    min-width: 600px;
+`;
 
-  p {
-    margin: 0.5rem;
-  }
-
-  @media (min-width: ${breakpoints.tablet}) {
-    margin: 1rem auto;
-  }
+export const Form = styled.form`
 `;
 
 export const Title = styled.h3`
   margin: 0 0 0.5rem;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const Input = styled.input`
   font-size: 1rem;
-  padding: 0.25rem;
+  padding: 0.5rem;
   margin: 0 0 0.5rem;
+  width: calc(100% - 1rem - 4px);
 
   ${(props) =>
     props.type === "submit"
@@ -40,9 +27,10 @@ export const Input = styled.input`
         background: ${colors.secondary};
         cursor: pointer;
         color: ${colors.light};
-        padding: 1rem;
         border: none;
         font-weight: bold;
+        margin: 0;
+        width: 100%;
         `
       : null}
 `;

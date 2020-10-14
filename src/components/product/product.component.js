@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
   ProductContainer,
   ProductDescription,
-  ProductImage,
+  Figure,
+  Image,
   ProductTitle,
   Price,
   Button,
 } from "./product.styles";
-import { ACTION_ADD_ITEM, ACTION_REMOVE_ITEM } from "../../modules/cart/cart.action";
+import {
+  ACTION_ADD_ITEM,
+  ACTION_REMOVE_ITEM,
+} from "../../modules/cart/cart.action";
 import { selectProducts } from "../../modules/products/products.selector";
 import { selectCartIds } from "../../modules/cart/cart.selector";
 
 function Product(props) {
+  const [imgSize, setImgSize] = useState([]);
+
   const handleAdd = (event) => {
-    const item = props.products.find(
-      (e) => e.id === Number(event.target.id)
-    );
+    const item = props.products.find((e) => e.id === Number(event.target.id));
     props.actionAddItem(item);
   };
 
@@ -24,14 +28,24 @@ function Product(props) {
     props.actionRemoveItem(Number(event.target.id));
   };
 
+  const onLoadImage = (event) => {
+    setImgSize([event.target.naturalHeight, event.target.naturalWidth]);
+  };
+
   return (
     <ProductContainer>
-      <ProductImage src={props.image} alt={props.title} />
+      <Figure>
+        <Image
+          src={props.image}
+          alt={props.title}
+          onLoad={onLoadImage}
+          imgSize={imgSize}
+        />
+      </Figure>
       <ProductDescription>
         <ProductTitle>{props.title}</ProductTitle>
         <p>Category: {props.category}</p>
         <p>{props.description}</p>
-
         <Price>Price: {props.price}</Price>
         {props.cartItems.includes(props.id) ? (
           <Button danger id={props.id} onClick={handleRemove}>
